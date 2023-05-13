@@ -1,0 +1,14 @@
+org_name: nullstone
+name: aws-network-load-balancer
+friendly_name: TCP Load Balancer
+description: Expose an application to the internet over TCP.
+category: capability
+subcategory: ingress
+provider_types:
+    - aws
+platform: nlb
+subplatform: ""
+type: ""
+appCategories:
+    - container
+is_public: true

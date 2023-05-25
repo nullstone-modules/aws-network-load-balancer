@@ -3,7 +3,6 @@ resource "aws_lb" "this" {
   internal           = false
   load_balancer_type = "network"
   subnets            = local.subnet_ids
-  security_groups    = [aws_security_group.lb.id]
   ip_address_type    = "ipv4"
   tags               = local.tags
 

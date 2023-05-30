@@ -11,7 +11,7 @@ EOF
 locals {
   app_security_group_id = var.app_metadata["security_group_id"]
   port                  = var.app_metadata["service_port"]
-  all_ports             = {for p in distinct(concat([local.port], var.additional_ports)) : tostring(p) => p}
+  all_ports             = { for p in distinct(concat([local.port], var.additional_ports)) : tostring(p) => p }
 }
 
 variable "protocol" {

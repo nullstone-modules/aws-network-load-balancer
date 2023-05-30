@@ -11,6 +11,7 @@ EOF
 locals {
   app_security_group_id = var.app_metadata["security_group_id"]
   port                  = var.app_metadata["service_port"]
+  addl_ports            = {for p in var.additional_ports : tostring(p) => p}
 }
 
 variable "protocol" {

@@ -24,7 +24,7 @@ resource "aws_lb_listener" "this" {
 }
 
 resource "aws_security_group_rule" "additional-from-world" {
-  for_each = var.additional_ports
+  for_each = local.addl_ports
 
   security_group_id = local.app_security_group_id
   type              = "ingress"
@@ -35,7 +35,7 @@ resource "aws_security_group_rule" "additional-from-world" {
 }
 
 resource "aws_lb_listener" "additional" {
-  for_each = var.additional_ports
+  for_each = local.addl_ports
 
   load_balancer_arn = aws_lb.this.arn
   protocol          = var.protocol

@@ -22,7 +22,7 @@ resource "aws_lb_target_group" "this" {
 }
 
 resource "aws_lb_target_group" "additional" {
-  for_each = var.additional_ports
+  for_each = local.addl_ports
 
   name                 = "${local.resource_name}-${each.value}"
   port                 = each.value

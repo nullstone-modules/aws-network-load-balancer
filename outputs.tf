@@ -1,8 +1,8 @@
 output "load_balancers" {
   value = [
-    {
-      port             = aws_lb_target_group.this.port
-      target_group_arn = aws_lb_target_group.this.arn
+    for tg in aws_lb_target_group.this : {
+      port             = tg.port
+      target_group_arn = tg.arn
     }
   ]
 }

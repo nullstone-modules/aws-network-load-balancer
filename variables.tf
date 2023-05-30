@@ -28,6 +28,15 @@ EOF
   }
 }
 
+variable "additional_ports" {
+  type        = set(number)
+  default     = []
+  description = <<EOF
+By default, the load balancer will listen on the application's `port`.
+This variable allows you to forward other ports to your container through the load balancer.
+EOF
+}
+
 variable "health_check_enabled" {
   description = "Enable and configure health checking for the service from the load balancer."
   type        = bool

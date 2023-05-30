@@ -7,7 +7,7 @@ resource "aws_security_group_rule" "app-from-world" {
 
   security_group_id = local.app_security_group_id
   type              = "ingress"
-  protocol          = "-1"
+  protocol          = "tcp"
   from_port         = each.value
   to_port           = each.value
   cidr_blocks       = ["0.0.0.0/0"]

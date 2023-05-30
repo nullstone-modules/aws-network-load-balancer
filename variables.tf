@@ -30,7 +30,7 @@ EOF
 }
 
 variable "additional_ports" {
-  type        = set(number)
+  type        = list(number)
   default     = []
   description = <<EOF
 By default, the load balancer will listen on the application's `port`.
